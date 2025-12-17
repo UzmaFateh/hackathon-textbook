@@ -1,11 +1,10 @@
 ---
-
 description: "Task list template for feature implementation"
 ---
 
-# Tasks: [FEATURE NAME]
+# Tasks: AI-Native Software Development Textbook
 
-**Input**: Design documents from `/specs/[###-feature-name]/`
+**Input**: Design documents from `/specs/1-ai-textbook/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
 **Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
@@ -20,26 +19,24 @@ description: "Task list template for feature implementation"
 
 ## Path Conventions
 
-- **Single project**: `src/`, `tests/` at repository root
-- **Web app**: `backend/src/`, `frontend/src/`
-- **Mobile**: `api/src/`, `ios/src/` or `android/src/`
+- **Single project**: `docs/`, `src/` at repository root
 - Paths shown below assume single project - adjust based on plan.md structure
 
-<!-- 
+<!--
   ============================================================================
   IMPORTANT: The tasks below are SAMPLE TASKS for illustration purposes only.
-  
+
   The /sp.tasks command MUST replace these with actual tasks based on:
   - User stories from spec.md (with their priorities P1, P2, P3...)
   - Feature requirements from plan.md
   - Entities from data-model.md
   - Endpoints from contracts/
-  
+
   Tasks MUST be organized by user story so each story can be:
   - Implemented independently
   - Tested independently
   - Delivered as an MVP increment
-  
+
   DO NOT keep these sample tasks in the generated tasks.md file.
   ============================================================================
 -->
@@ -48,9 +45,12 @@ description: "Task list template for feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project structure per implementation plan
-- [ ] T002 Initialize [language] project with [framework] dependencies
-- [ ] T003 [P] Configure linting and formatting tools
+- [x] T001 Create project structure per implementation plan
+- [x] T002 Initialize Docusaurus v3 project with dependencies
+- [x] T003 [P] Configure linting and formatting tools for MDX content
+- [x] T004 [P] Setup Git repository with proper .gitignore for Docusaurus
+- [x] T005 Install and configure citation plugin for APA formatting
+- [x] T006 Setup validation pipeline with link checker, plagiarism detector, and readability analyzer
 
 ---
 
@@ -62,81 +62,88 @@ description: "Task list template for feature implementation"
 
 Examples of foundational tasks (adjust based on your project):
 
-- [ ] T004 Setup database schema and migrations framework
-- [ ] T005 [P] Implement authentication/authorization framework
-- [ ] T006 [P] Setup API routing and middleware structure
-- [ ] T007 Create base models/entities that all stories depend on
-- [ ] T008 Configure error handling and logging infrastructure
-- [ ] T009 Setup environment configuration management
+- [x] T007 Setup basic Docusaurus configuration in docusaurus.config.ts
+- [x] T008 [P] Create initial sidebar structure in sidebars.ts
+- [x] T009 Create base MDX components for interactive code examples
+- [x] T010 Setup content directory structure (docs/chapters/, docs/tutorials/, docs/references/)
+- [x] T011 Create validation scripts for code snippets
+- [x] T012 Setup automated build and validation workflow
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
 ---
 
-## Phase 3: User Story 1 - [Title] (Priority: P1) 🎯 MVP
+## Phase 3: User Story 1 - Core Textbook Access (Priority: P1) 🎯 MVP
 
-**Goal**: [Brief description of what this story delivers]
+**Goal**: Software engineers and CS students can access comprehensive documentation about AI-native software development practices using Spec-Kit Plus and Claude Code
 
-**Independent Test**: [How to verify this story works on its own]
+**Independent Test**: Can be fully tested by verifying users can navigate the textbook content and find information about AI-native development workflows, delivering comprehensive educational value.
 
 ### Tests for User Story 1 (OPTIONAL - only if tests requested) ⚠️
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T010 [P] [US1] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T011 [P] [US1] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T013 [P] [US1] Test navigation to core textbook sections
+- [ ] T014 [P] [US1] Test search functionality for AI-native development topics
 
 ### Implementation for User Story 1
 
-- [ ] T012 [P] [US1] Create [Entity1] model in src/models/[entity1].py
-- [ ] T013 [P] [US1] Create [Entity2] model in src/models/[entity2].py
-- [ ] T014 [US1] Implement [Service] in src/services/[service].py (depends on T012, T013)
-- [ ] T015 [US1] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T016 [US1] Add validation and error handling
-- [ ] T017 [US1] Add logging for user story 1 operations
+- [ ] T015 [P] [US1] Create introductory chapter in docs/chapters/chapter-1-theory-intro.md (minimum 2000 words with theory, practical examples, and exercises)
+- [ ] T016 [P] [US1] Create chapter on Spec-Kit Plus integration in docs/chapters/chapter-2-spec-kit-plus.md (minimum 2000 words with theory, practical examples, and exercises)
+- [ ] T017 [US1] Implement basic navigation and search in Docusaurus site structure
+- [ ] T018 [US1] Add citations to introductory chapters following APA format
+- [ ] T019 [US1] Validate readability of content (Flesch-Kincaid Grade level 10-12)
+- [ ] T020 [US1] Add code snippets with MDX components to chapters
+- [ ] T021 [US1] Validate all code snippets using automated validation scripts
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
 ---
 
-## Phase 4: User Story 2 - [Title] (Priority: P2)
+## Phase 4: User Story 2 - Practical Walk-throughs Access (Priority: P2)
 
-**Goal**: [Brief description of what this story delivers]
+**Goal**: Technical architects and software engineers can follow practical, hands-on examples that demonstrate Claude Code terminal workflows to understand real-world implementation of AI-native development practices
 
-**Independent Test**: [How to verify this story works on its own]
+**Independent Test**: Can be tested by verifying users can complete at least 5 practical walk-throughs and reproduce the demonstrated Claude Code workflows, delivering hands-on learning value.
 
 ### Tests for User Story 2 (OPTIONAL - only if tests requested) ⚠️
 
-- [ ] T018 [P] [US2] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T019 [P] [US2] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T022 [P] [US2] Test ability to follow terminal workflow examples
+- [ ] T023 [P] [US2] Test reproduction of Claude Code workflows
 
 ### Implementation for User Story 2
 
-- [ ] T020 [P] [US2] Create [Entity] model in src/models/[entity].py
-- [ ] T021 [US2] Implement [Service] in src/services/[service].py
-- [ ] T022 [US2] Implement [endpoint/feature] in src/[location]/[file].py
-- [ ] T023 [US2] Integrate with User Story 1 components (if needed)
+- [ ] T024 [P] [US2] Create getting started tutorial in docs/tutorials/tutorial-1-getting-started.md
+- [ ] T025 [P] [US2] Create specification workflow tutorial in docs/tutorials/tutorial-2-specification-workflow.md
+- [ ] T026 [P] [US2] Create implementation process tutorial in docs/tutorials/tutorial-3-implementation-process.md
+- [ ] T027 [US2] Add 5+ practical walk-throughs of Claude Code terminal workflows with step-by-step instructions
+- [ ] T028 [US2] Implement code validation for all tutorial examples
+- [ ] T029 [US2] Add prerequisites and expected outcomes to tutorials
+- [ ] T030 [US2] Integrate tutorials with core textbook content
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
 ---
 
-## Phase 5: User Story 3 - [Title] (Priority: P3)
+## Phase 5: User Story 3 - Academic Reference Access (Priority: P3)
 
-**Goal**: [Brief description of what this story delivers]
+**Goal**: CS students and researchers can access high-authority technical and academic sources that validate the concepts presented in the textbook, ensuring academic rigor and credibility
 
-**Independent Test**: [How to verify this story works on its own]
+**Independent Test**: Can be tested by verifying users can access and reference 15+ high-authority technical or academic sources, delivering academic validation and credibility.
 
 ### Tests for User Story 3 (OPTIONAL - only if tests requested) ⚠️
 
-- [ ] T024 [P] [US3] Contract test for [endpoint] in tests/contract/test_[name].py
-- [ ] T025 [P] [US3] Integration test for [user journey] in tests/integration/test_[name].py
+- [ ] T031 [P] [US3] Test access to academic references
+- [ ] T032 [P] [US3] Test proper APA citation formatting
 
 ### Implementation for User Story 3
 
-- [ ] T026 [P] [US3] Create [Entity] model in src/models/[entity].py
-- [ ] T027 [US3] Implement [Service] in src/services/[service].py
-- [ ] T028 [US3] Implement [endpoint/feature] in src/[location]/[file].py
+- [ ] T033 [P] [US3] Create bibliography file in docs/references/citations.md
+- [ ] T034 [P] [US3] Identify and catalog 15+ high-authority technical or academic sources
+- [ ] T035 [US3] Format all citations in proper APA style
+- [ ] T036 [US3] Ensure 70% primary documentation and 30% peer-reviewed secondary sources
+- [ ] T037 [US3] Add in-text citations to all chapters and tutorials
+- [ ] T038 [US3] Validate all citations follow APA format requirements
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -210,12 +217,12 @@ Examples of foundational tasks (adjust based on your project):
 
 ```bash
 # Launch all tests for User Story 1 together (if tests requested):
-Task: "Contract test for [endpoint] in tests/contract/test_[name].py"
-Task: "Integration test for [user journey] in tests/integration/test_[name].py"
+Task: "Test navigation to core textbook sections"
+Task: "Test search functionality for AI-native development topics"
 
-# Launch all models for User Story 1 together:
-Task: "Create [Entity1] model in src/models/[entity1].py"
-Task: "Create [Entity2] model in src/models/[entity2].py"
+# Launch all chapters for User Story 1 together:
+Task: "Create introductory chapter in docs/chapters/chapter-1-theory-intro.md (minimum 2000 words with theory, practical examples, and exercises)"
+Task: "Create chapter on Spec-Kit Plus integration in docs/chapters/chapter-2-spec-kit-plus.md (minimum 2000 words with theory, practical examples, and exercises)"
 ```
 
 ---

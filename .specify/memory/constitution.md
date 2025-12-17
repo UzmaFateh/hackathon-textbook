@@ -1,55 +1,48 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: 0.1.0 → 1.0.0
+- Modified principles: [PRINCIPLE_1_NAME] → Technical Accuracy, [PRINCIPLE_2_NAME] → Clarity, [PRINCIPLE_3_NAME] → Practicality
+- Added sections: Documentation Standards, Content Constraints, Success Criteria
+- Removed sections: None
+- Templates requiring updates:
+  - .specify/templates/plan-template.md ✅ updated
+  - .specify/templates/spec-template.md ✅ updated
+  - .specify/templates/tasks-template.md ✅ updated
+- Follow-up TODOs: None
+-->
+# Technical Book on AI-Native Software Development Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Technical Accuracy
+All technical concepts must be verified against official documentation. This ensures that every code example, explanation, and concept presented in the book is accurate and aligns with current best practices and official resources.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Clarity
+Content must be accessible to developers and CS students. All explanations, examples, and concepts must be presented in a way that is understandable to the target audience without sacrificing technical precision.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Practicality
+Focus on reproducible code examples and real-world workflows. Every technical concept should be demonstrated with practical examples that readers can reproduce and apply in real-world scenarios.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Documentation Standards
+Use Docusaurus Markdown features (admonitions, code blocks) for all content. Citations must follow APA style for all academic and primary sources. Maintain a Flesch-Kincaid Grade level of 10-12 for optimal readability.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Originality and Quality
+100% human-verified content with 0% plagiarism tolerance. All content must be original and properly attributed where sources are referenced. Code snippets must be fully functional and error-free.
 
-### [PRINCIPLE_6_NAME]
+## Content Constraints
 
+Structure: Minimum 5 comprehensive chapters that cover AI-native software development concepts thoroughly.
 
-[PRINCIPLE__DESCRIPTION]
+Sources: Minimum 15 high-authority sources (50% peer-reviewed) to ensure academic rigor and credibility.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+Tech Stack: Integration of Spec-Kit Plus for specification and Claude Code for implementation to demonstrate AI-native development workflows.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Development Workflow
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+All content must pass fact-checking reviews before publication. Code examples must be tested and verified as functional. All work must align with the AI-native development lifecycle, incorporating modern AI-assisted development practices and tools.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other practices and guidelines for this project. All contributions must comply with these principles. Amendments require documentation of the change, approval from project maintainers, and a migration plan for existing content.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-17 | **Last Amended**: 2025-12-17

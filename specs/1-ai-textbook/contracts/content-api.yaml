@@ -1,0 +1,158 @@
+# API Contract: Content Management for AI-Native Software Development Textbook
+
+## Content Retrieval Endpoints
+
+### GET /api/chapters
+Retrieve a list of all textbook chapters
+
+**Request**:
+- Method: GET
+- Path: /api/chapters
+- Query Parameters:
+  - type: Optional filter by chapter type (theory|practical|mixed)
+  - difficulty: Optional filter by difficulty (beginner|intermediate|advanced)
+  - limit: Optional limit on number of results
+  - offset: Optional offset for pagination
+
+**Response**:
+- Status: 200 OK
+- Body:
+```json
+{
+  "chapters": [
+    {
+      "id": "chapter-1-theory-intro",
+      "title": "Introduction to AI-Native Development Theory",
+      "description": "Foundational concepts of AI-native software development",
+      "wordCount": 2200,
+      "type": "theory",
+      "difficulty": "beginner",
+      "url": "/chapters/chapter-1-theory-intro"
+    }
+  ],
+  "total": 1,
+  "limit": 10,
+  "offset": 0
+}
+```
+
+### GET /api/chapters/{chapterId}
+Retrieve a specific chapter by ID
+
+**Request**:
+- Method: GET
+- Path: /api/chapters/{chapterId}
+
+**Response**:
+- Status: 200 OK
+- Body:
+```json
+{
+  "id": "chapter-1-theory-intro",
+  "title": "Introduction to AI-Native Development Theory",
+  "content": "# Chapter Content\n...",
+  "wordCount": 2200,
+  "type": "theory",
+  "difficulty": "beginner",
+  "citations": [
+    {
+      "id": "citation-1",
+      "apaFormatted": "Author, A. A. (Year). Title of work. Publisher."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "exercise-1",
+      "question": "Sample exercise question",
+      "type": "multiple-choice"
+    }
+  ]
+}
+```
+
+### GET /api/tutorials
+Retrieve a list of all tutorials
+
+**Request**:
+- Method: GET
+- Path: /api/tutorials
+- Query Parameters:
+  - prerequisites: Optional filter by prerequisite knowledge
+  - expectedTime: Optional filter by expected completion time
+
+**Response**:
+- Status: 200 OK
+- Body:
+```json
+{
+  "tutorials": [
+    {
+      "id": "tutorial-1-getting-started",
+      "title": "Getting Started with Claude Code",
+      "description": "First steps with Claude Code terminal workflows",
+      "expectedTime": "30 minutes",
+      "prerequisites": ["Node.js", "Basic terminal knowledge"],
+      "url": "/tutorials/tutorial-1-getting-started"
+    }
+  ]
+}
+```
+
+## Validation Endpoints
+
+### POST /api/validate-code
+Validate a code snippet for correctness
+
+**Request**:
+- Method: POST
+- Path: /api/validate-code
+- Headers: Content-Type: application/json
+- Body:
+```json
+{
+  "language": "javascript",
+  "code": "console.log('Hello World');",
+  "expectedOutput": "Hello World"
+}
+```
+
+**Response**:
+- Status: 200 OK
+- Body:
+```json
+{
+  "isValid": true,
+  "executionResult": "Hello World",
+  "errors": []
+}
+```
+
+## Search Endpoint
+
+### GET /api/search
+Search across all textbook content
+
+**Request**:
+- Method: GET
+- Path: /api/search
+- Query Parameters:
+  - q: Search query string
+  - type: Optional filter by content type (chapter|tutorial|citation)
+
+**Response**:
+- Status: 200 OK
+- Body:
+```json
+{
+  "results": [
+    {
+      "id": "chapter-1-theory-intro",
+      "title": "Introduction to AI-Native Development Theory",
+      "type": "chapter",
+      "url": "/chapters/chapter-1-theory-intro",
+      "preview": "Foundational concepts of AI-native software development..."
+    }
+  ],
+  "total": 1
+}
+```

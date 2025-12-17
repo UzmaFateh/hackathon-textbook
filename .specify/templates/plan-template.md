@@ -31,7 +31,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+1. **Technical Accuracy**: All technical concepts must be verified against official documentation - ensure all implementation details align with official sources and documentation.
+2. **Clarity**: Content must be accessible to developers and CS students - all implementation decisions should consider the target audience and maintain clear, understandable code and documentation.
+3. **Practicality**: Focus on reproducible code examples and real-world workflows - ensure all implementations are practical and can be reproduced by readers.
+4. **Documentation Standards**: Use Docusaurus Markdown features (admonitions, code blocks) and maintain APA style citations - all documentation must follow these standards.
+5. **Originality and Quality**: 100% human-verified content with 0% plagiarism tolerance - ensure all code and content are original and properly attributed.
 
 ## Project Structure
 
