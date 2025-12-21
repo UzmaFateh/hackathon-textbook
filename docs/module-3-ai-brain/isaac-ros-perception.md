@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Chapter 2: Isaac ROS and Hardware-Accelerated Perception'
+sidebar_label: 'Chapter 10: Isaac ROS and Hardware-Accelerated Perception'
 description: 'Hardware-accelerated VSLAM and navigation for humanoid robots'
 ---
 
-# Chapter 2: Isaac ROS and Hardware-Accelerated Perception
+# Chapter 10: Isaac ROS and Hardware-Accelerated Perception
 
 ## Introduction
 

@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Chapter 3: Understanding URDF for Humanoid Robots'
+sidebar_label: 'Chapter 4: Understanding URDF for Humanoid Robots'
 description: 'Unified Robot Description Format for humanoid robot modeling'
 ---
 
-# Chapter 3: Understanding URDF for Humanoid Robots
+# Chapter 4: Understanding URDF for Humanoid Robots
 
 ## Introduction
 

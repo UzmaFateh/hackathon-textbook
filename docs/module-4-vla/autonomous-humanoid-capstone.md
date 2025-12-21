@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Chapter 2: Capstone Project - The Autonomous Humanoid'
+sidebar_label: 'Chapter 18: Capstone Project - The Autonomous Humanoid'
 description: 'Integrating all modules into a complete autonomous humanoid system'
 ---
 
-# Chapter 2: Capstone Project - The Autonomous Humanoid
+# Chapter 18: Capstone Project - The Autonomous Humanoid
 
 ## Introduction
 

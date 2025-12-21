@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Chapter 2: Unity Integration for High-Fidelity Rendering'
+sidebar_label: 'Chapter 7: Unity Integration for High-Fidelity Rendering'
 description: 'High-fidelity rendering and human-robot interaction in Unity'
 ---
 
-# Chapter 2: Unity Integration for High-Fidelity Rendering
+# Chapter 7: Unity Integration for High-Fidelity Rendering
 
 ## Introduction
 

@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Chapter 2: The Robotic Nervous System - ROS 2 Fundamentals'
+sidebar_label: 'Chapter 3: The Robotic Nervous System - ROS 2 Fundamentals'
 description: 'Understanding ROS 2 architecture and core concepts for robotic control'
 ---
 
-# Chapter 2: The Robotic Nervous System - ROS 2 Fundamentals
+# Chapter 3: The Robotic Nervous System - ROS 2 Fundamentals
 
 ## Introduction
 

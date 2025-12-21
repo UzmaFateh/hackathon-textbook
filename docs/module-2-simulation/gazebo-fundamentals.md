@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Chapter 1: Gazebo Simulation Fundamentals'
+sidebar_label: 'Chapter 6: Gazebo Simulation Fundamentals'
 description: 'Physics simulation and environment building for humanoid robots'
 ---
 
-# Chapter 1: Gazebo Simulation Fundamentals
+# Chapter 6: Gazebo Simulation Fundamentals
 
 ## Introduction
 

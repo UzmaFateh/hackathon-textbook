@@ -4,7 +4,7 @@ import Chatbot from '../components/Chatbot/Chatbot'; // Import the chatbot compo
 import type { Props } from '@theme/Layout';
 
 // Create a wrapper around the default Layout to add the chatbot
-export default function LayoutWrapper(props: Props): JSX.Element {
+export default function LayoutWrapper(props: Props): React.ReactElement {
   return (
     <>
       <Layout {...props}>

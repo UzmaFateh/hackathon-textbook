@@ -1,9 +1,9 @@
 ---
-sidebar_label: 'Chapter 1: Vision-Language-Action Convergence'
+sidebar_label: 'Chapter 14: Vision-Language-Action Convergence'
 description: 'The convergence of LLMs and Robotics for humanoid interaction'
 ---
 
-# Chapter 1: Vision-Language-Action Convergence
+# Chapter 14: Vision-Language-Action Convergence
 
 ## Introduction
 
