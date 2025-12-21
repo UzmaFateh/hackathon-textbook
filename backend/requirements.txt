@@ -1,0 +1,17 @@
+fastapi==0.111.0
+uvicorn[standard]==0.30.6
+pydantic==2.8.2
+python-dotenv==1.0.1
+qdrant-client==1.10.0
+openai==1.40.0
+cohere==5.5.8
+python-multipart==0.0.20
+cryptography>=43.0.0
+requests==2.32.5
+pyyaml==6.0.2
+# tiktoken==0.7.0  # Removed due to Rust compilation requirement on Windows
+markdown==3.10.0
+beautifulsoup4==4.13.0
+SQLAlchemy==2.0.35
+httpx==0.27.2
+# psycopg2-binary==2.9.9  # Removed due to pg_config requirement on Windows

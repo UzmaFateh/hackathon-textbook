@@ -1,0 +1,92 @@
+Collecting google-generativeai==0.8.4
+  Using cached google_generativeai-0.8.4-py3-none-any.whl.metadata (4.2 kB)
+Collecting openai==1.40.0
+  Using cached openai-1.40.0-py3-none-any.whl.metadata (22 kB)
+Requirement already satisfied: cryptography in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (44.0.2)
+Collecting markdown==3.10.0
+  Using cached markdown-3.10-py3-none-any.whl.metadata (5.1 kB)
+Requirement already satisfied: beautifulsoup4==4.13.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (4.13.0)
+Collecting qdrant-client==1.10.0
+  Using cached qdrant_client-1.10.0-py3-none-any.whl.metadata (10 kB)
+Collecting google-ai-generativelanguage==0.6.15 (from google-generativeai==0.8.4)
+  Using cached google_ai_generativelanguage-0.6.15-py3-none-any.whl.metadata (5.7 kB)
+Requirement already satisfied: google-api-core in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-generativeai==0.8.4) (2.25.1)
+Requirement already satisfied: google-api-python-client in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-generativeai==0.8.4) (2.179.0)
+Requirement already satisfied: google-auth>=2.15.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-generativeai==0.8.4) (2.40.3)
+Requirement already satisfied: protobuf in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-generativeai==0.8.4) (4.25.8)
+Requirement already satisfied: pydantic in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-generativeai==0.8.4) (2.8.2)
+Requirement already satisfied: tqdm in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-generativeai==0.8.4) (4.67.1)
+Requirement already satisfied: typing-extensions in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-generativeai==0.8.4) (4.15.0)
+Requirement already satisfied: anyio<5,>=3.5.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from openai==1.40.0) (4.9.0)
+Requirement already satisfied: distro<2,>=1.7.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from openai==1.40.0) (1.9.0)
+Requirement already satisfied: httpx<1,>=0.23.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from openai==1.40.0) (0.27.2)
+Requirement already satisfied: jiter<1,>=0.4.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from openai==1.40.0) (0.10.0)
+Requirement already satisfied: sniffio in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from openai==1.40.0) (1.3.1)
+Requirement already satisfied: soupsieve>1.2 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from beautifulsoup4==4.13.0) (2.8)
+Requirement already satisfied: grpcio>=1.41.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from qdrant-client==1.10.0) (1.74.0)
+Requirement already satisfied: grpcio-tools>=1.41.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from qdrant-client==1.10.0) (1.71.2)
+Requirement already satisfied: numpy>=1.26 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from qdrant-client==1.10.0) (2.2.3)
+Requirement already satisfied: portalocker<3.0.0,>=2.7.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from qdrant-client==1.10.0) (2.10.1)
+Requirement already satisfied: urllib3<3,>=1.26.14 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from qdrant-client==1.10.0) (2.6.2)
+Requirement already satisfied: proto-plus<2.0.0dev,>=1.22.3 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-ai-generativelanguage==0.6.15->google-generativeai==0.8.4) (1.26.1)
+Requirement already satisfied: idna>=2.8 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from anyio<5,>=3.5.0->openai==1.40.0) (3.10)
+Requirement already satisfied: googleapis-common-protos<2.0.0,>=1.56.2 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-api-core->google-generativeai==0.8.4) (1.70.0)
+Requirement already satisfied: requests<3.0.0,>=2.18.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-api-core->google-generativeai==0.8.4) (2.32.5)
+Requirement already satisfied: grpcio-status<2.0.0,>=1.33.2 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-api-core[grpc]!=2.0.*,!=2.1.*,!=2.10.*,!=2.2.*,!=2.3.*,!=2.4.*,!=2.5.*,!=2.6.*,!=2.7.*,!=2.8.*,!=2.9.*,<3.0.0dev,>=1.34.1->google-ai-generativelanguage==0.6.15->google-generativeai==0.8.4) (1.62.3)
+Requirement already satisfied: cachetools<6.0,>=2.0.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-auth>=2.15.0->google-generativeai==0.8.4) (5.5.2)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-auth>=2.15.0->google-generativeai==0.8.4) (0.4.2)
+Requirement already satisfied: rsa<5,>=3.1.4 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-auth>=2.15.0->google-generativeai==0.8.4) (4.9.1)
+Requirement already satisfied: certifi in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from httpx<1,>=0.23.0->openai==1.40.0) (2025.1.31)
+Requirement already satisfied: httpcore==1.* in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from httpx<1,>=0.23.0->openai==1.40.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from httpcore==1.*->httpx<1,>=0.23.0->openai==1.40.0) (0.16.0)
+Requirement already satisfied: pywin32>=226 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from portalocker<3.0.0,>=2.7.0->qdrant-client==1.10.0) (311)
+Requirement already satisfied: annotated-types>=0.4.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from pydantic->google-generativeai==0.8.4) (0.7.0)
+Requirement already satisfied: pydantic-core==2.20.1 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from pydantic->google-generativeai==0.8.4) (2.20.1)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from requests<3.0.0,>=2.18.0->google-api-core->google-generativeai==0.8.4) (3.4.4)
+Requirement already satisfied: pyasn1>=0.1.3 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from rsa<5,>=3.1.4->google-auth>=2.15.0->google-generativeai==0.8.4) (0.6.1)
+Requirement already satisfied: cffi>=1.12 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from cryptography) (1.17.1)
+Requirement already satisfied: pycparser in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from cffi>=1.12->cryptography) (2.22)
+Collecting protobuf (from google-generativeai==0.8.4)
+  Using cached protobuf-5.29.5-cp310-abi3-win_amd64.whl.metadata (592 bytes)
+Requirement already satisfied: setuptools in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from grpcio-tools>=1.41.0->qdrant-client==1.10.0) (80.9.0)
+Requirement already satisfied: h2<5,>=3 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from httpx[http2]>=0.20.0->qdrant-client==1.10.0) (4.3.0)
+Requirement already satisfied: hyperframe<7,>=6.1 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from h2<5,>=3->httpx[http2]>=0.20.0->qdrant-client==1.10.0) (6.1.0)
+Requirement already satisfied: hpack<5,>=4.1 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from h2<5,>=3->httpx[http2]>=0.20.0->qdrant-client==1.10.0) (4.1.0)
+Requirement already satisfied: colorama in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from tqdm->google-generativeai==0.8.4) (0.4.6)
+Requirement already satisfied: httplib2<1.0.0,>=0.19.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-api-python-client->google-generativeai==0.8.4) (0.22.0)
+Requirement already satisfied: google-auth-httplib2<1.0.0,>=0.2.0 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-api-python-client->google-generativeai==0.8.4) (0.2.0)
+Requirement already satisfied: uritemplate<5,>=3.0.1 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from google-api-python-client->google-generativeai==0.8.4) (4.2.0)
+Requirement already satisfied: pyparsing!=3.0.0,!=3.0.1,!=3.0.2,!=3.0.3,<4,>=2.4.2 in c:\users\uzmaf\appdata\local\programs\python\python313\lib\site-packages (from httplib2<1.0.0,>=0.19.0->google-api-python-client->google-generativeai==0.8.4) (3.2.3)
+Using cached google_generativeai-0.8.4-py3-none-any.whl (175 kB)
+Using cached openai-1.40.0-py3-none-any.whl (360 kB)
+Using cached markdown-3.10-py3-none-any.whl (107 kB)
+Using cached qdrant_client-1.10.0-py3-none-any.whl (254 kB)
+Using cached google_ai_generativelanguage-0.6.15-py3-none-any.whl (1.3 MB)
+Using cached protobuf-5.29.5-cp310-abi3-win_amd64.whl (434 kB)
+Installing collected packages: protobuf, markdown, openai, qdrant-client, google-ai-generativelanguage, google-generativeai
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 4.25.8
+    Uninstalling protobuf-4.25.8:
+      Successfully uninstalled protobuf-4.25.8
+  Attempting uninstall: markdown
+    Found existing installation: Markdown 3.6
+    Uninstalling Markdown-3.6:
+      Successfully uninstalled Markdown-3.6
+  Attempting uninstall: openai
+    Found existing installation: openai 1.81.0
+    Uninstalling openai-1.81.0:
+      Successfully uninstalled openai-1.81.0
+  Attempting uninstall: qdrant-client
+    Found existing installation: qdrant-client 1.12.2
+    Uninstalling qdrant-client-1.12.2:
+      Successfully uninstalled qdrant-client-1.12.2
+  Attempting uninstall: google-ai-generativelanguage
+    Found existing installation: google-ai-generativelanguage 0.4.0
+    Uninstalling google-ai-generativelanguage-0.4.0:
+      Successfully uninstalled google-ai-generativelanguage-0.4.0
+  Attempting uninstall: google-generativeai
+    Found existing installation: google-generativeai 0.4.1
+    Uninstalling google-generativeai-0.4.1:
+      Successfully uninstalled google-generativeai-0.4.1
+
+Successfully installed google-ai-generativelanguage-0.6.15 google-generativeai-0.8.4 markdown-3.10 openai-1.40.0 protobuf-5.29.5 qdrant-client-1.10.0

@@ -1,0 +1,211 @@
+openapi: 3.0.3
+info:
+  title: Docusaurus RAG Chatbot API
+  description: API for the Docusaurus RAG chatbot system
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+
+servers:
+  - url: http://localhost:8000
+    description: Development server
+  - url: https://api.yourdomain.com
+    description: Production server
+
+paths:
+  /api/health:
+    get:
+      summary: Health check endpoint
+      description: Check the health status of the API
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2025-12-18T10:00:00Z"
+
+  /api/ingest:
+    post:
+      summary: Ingest Docusaurus markdown files
+      description: Process and store Docusaurus markdown files for RAG
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                directory_path:
+                  type: string
+                  description: Path to the Docusaurus docs directory
+                  example: "/path/to/docusaurus/docs"
+              required:
+                - directory_path
+      responses:
+        '200':
+          description: Files processed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "success"
+                  processed_files:
+                    type: integer
+                    example: 5
+                  errors:
+                    type: array
+                    items:
+                      type: string
+                    example: []
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/chat:
+    post:
+      summary: Process chat queries with RAG
+      description: Process user queries using RAG to provide context-aware responses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: User's question/query
+                  example: "How do I configure authentication?"
+                selected_text:
+                  type: string
+                  description: Optional text selected by user for context
+                  example: "Authentication can be configured using the auth module..."
+                session_id:
+                  type: string
+                  description: Optional session identifier
+                  example: "session-12345"
+              required:
+                - query
+      responses:
+        '200':
+          description: Query processed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: string
+                    description: AI-generated response
+                    example: "To configure authentication, you can use the auth module..."
+                  sources:
+                    type: array
+                    items:
+                      type: string
+                    description: List of document sources used
+                    example: ["docs/authentication.md", "docs/security.md"]
+                  session_id:
+                    type: string
+                    description: Session identifier
+                    example: "session-12345"
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/documents:
+    get:
+      summary: List all processed documents
+      description: Get a list of all documents in the system
+      responses:
+        '200':
+          description: List of documents
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  documents:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Document'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    Document:
+      type: object
+      properties:
+        document_id:
+          type: string
+          description: Unique identifier for the document
+          example: "doc-12345"
+        title:
+          type: string
+          description: Title of the document
+          example: "Authentication Guide"
+        path:
+          type: string
+          description: Path to the document in Docusaurus structure
+          example: "docs/authentication.md"
+        content_hash:
+          type: string
+          description: Hash of the document content
+          example: "a1b2c3d4e5f6..."
+        created_date:
+          type: string
+          format: date-time
+          description: When the document was first processed
+          example: "2025-12-18T10:00:00Z"
+        updated_date:
+          type: string
+          format: date-time
+          description: When the document was last updated
+          example: "2025-12-18T10:00:00Z"
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+          example: "An error occurred"
+        details:
+          type: string
+          description: Additional error details
+          example: "Detailed error information"
