@@ -1,4 +1,5 @@
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
+// const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = 'https://uzifateh-ai-book-chatbot-backend.hf.space';
 
 interface ChatRequest {
   query: string;
