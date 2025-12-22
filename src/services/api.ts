@@ -1,7 +1,7 @@
 // For Docusaurus, we'll use a fixed API URL or allow configuration through siteConfig
 const API_BASE_URL = typeof window !== 'undefined'
-  ? (window as any).CHATBOT_API_BASE_URL || 'http://localhost:8000'
-  : 'http://localhost:8000';
+  ? (window as any).CHATBOT_API_BASE_URL || 'https://uzifateh-ai-book-chatbot-backend.hf.space'
+  : 'https://uzifateh-ai-book-chatbot-backend.hf.space';
 
 interface ChatRequest {
   query: string;
@@ -16,7 +16,8 @@ interface ChatResponse {
 }
 
 interface IngestionRequest {
-  directory_path: string;
+  site_url?: string;        // For live site crawling
+  directory_path?: string;  // For local directory ingestion
 }
 
 interface IngestionResponse {
@@ -27,44 +28,90 @@ interface IngestionResponse {
 
 export const chatApi = {
   async sendMessage(request: ChatRequest): Promise<ChatResponse> {
-    const response = await fetch(`${API_BASE_URL}/api/chat`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(request),
-    });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/chat`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(request),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+      }
+
+      return response.json();
+    } catch (error) {
+      clearTimeout(timeoutId);
+      if (error instanceof Error && error.name === 'AbortError') {
+        throw new Error('Request timeout - the backend might be waking up. Please try again.');
+      }
+      throw error;
     }
-
-    return response.json();
   },
 
   async ingestDocuments(request: IngestionRequest): Promise<IngestionResponse> {
-    const response = await fetch(`${API_BASE_URL}/api/ingest`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(request),
-    });
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout for ingestion
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/ingest`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(request),
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+      }
+
+      return response.json();
+    } catch (error) {
+      clearTimeout(timeoutId);
+      if (error instanceof Error && error.name === 'AbortError') {
+        throw new Error('Request timeout - document ingestion might take longer. Please try again.');
+      }
+      throw error;
     }
-
-    return response.json();
   },
 
   async healthCheck(): Promise<{ status: string; timestamp: string }> {
-    const response = await fetch(`${API_BASE_URL}/api/health`);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/health`, {
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
+      }
+
+      return response.json();
+    } catch (error) {
+      clearTimeout(timeoutId);
+      if (error instanceof Error && error.name === 'AbortError') {
+        throw new Error('Health check timeout - backend might be waking up.');
+      }
+      throw error;
     }
-
-    return response.json();
   },
 };
