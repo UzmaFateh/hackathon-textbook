@@ -63,6 +63,12 @@
   margin-top: 1.5rem;
 }
 
+.buttons .button {
+  font-size: 1rem;
+  padding: 12px 24px;
+  min-height: 44px;
+}
+
 @media screen and (max-width: 996px) {
   .heroContent {
     flex-direction: column;
@@ -75,6 +81,32 @@
 
   .buttons {
     justify-content: center;
-   
+  }
+
+  .buttons .button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    min-height: 40px;
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .buttons .button {
+    font-size: 0.85rem;
+    padding: 9px 18px;
+    min-height: 38px;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .buttons .button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    min-height: 36px;
+    width: 80%;
+    max-width: none;
   }
 }
