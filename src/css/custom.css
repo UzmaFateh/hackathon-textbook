@@ -144,8 +144,8 @@ a:hover,
 
 @media screen and (max-width: 480px) {
   .button {
-    font-size: 0.6rem;
-    padding: 2px 2px;
+    font-size: 0.7rem;
+    /* padding: 2px 2px; */
     min-height: 36px;
     width: 100%;
     
