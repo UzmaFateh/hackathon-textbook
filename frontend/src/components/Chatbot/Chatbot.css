@@ -6,7 +6,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #4f46e5;
+  background-color: #bf3fe6;
   color: white;
   border: none;
   cursor: pointer;
@@ -19,7 +19,7 @@
 }
 
 .chatbot-floating-button:hover {
-  background-color: #4338ca;
+  background-color: #9938ca;
   transform: scale(1.1);
 }
 
@@ -55,7 +55,7 @@
 }
 
 .chatbot-header {
-  background-color: #4f46e5;
+  background-color: #9035ba;
   color: white;
   padding: 16px;
   display: flex;
