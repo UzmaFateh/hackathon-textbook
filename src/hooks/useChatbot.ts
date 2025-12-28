@@ -9,10 +9,11 @@ interface Message {
   timestamp: Date;
 }
 
-export const useChatbot = (selectedText?: string) => {
+export const useChatbot = (selectedText?: string, shouldShowIntro: boolean = false) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [sessionId, setSessionId] = useState<string | null>(null);
+  const [hasIntroBeenShown, setHasIntroBeenShown] = useState(false);
 
   // Add initial message when selectedText changes
   useEffect(() => {
@@ -28,6 +29,21 @@ export const useChatbot = (selectedText?: string) => {
       ]);
     }
   }, [selectedText]);
+
+  // Add intro message when chat session starts (only if no messages exist yet and shouldShowIntro is true)
+  useEffect(() => {
+    if (messages.length === 0 && shouldShowIntro && !hasIntroBeenShown && !selectedText) {
+      const introMessage: Message = {
+        id: `intro-${Date.now()}`,
+        content: "Hello! I'm your Textbook Assistant. How can I help you with the documentation today?",
+        role: 'assistant',
+        timestamp: new Date(),
+      };
+
+      setMessages(prev => [...prev, introMessage]);
+      setHasIntroBeenShown(true);
+    }
+  }, [messages.length, shouldShowIntro, hasIntroBeenShown, selectedText]);
 
   const sendMessage = async (query: string) => {
     // Add user message to the chat

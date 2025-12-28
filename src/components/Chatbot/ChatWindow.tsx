@@ -18,8 +18,9 @@ interface ChatWindowProps {
 
 const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose, selectedText }) => {
   const [inputValue, setInputValue] = useState('');
+  const [shouldShowIntro, setShouldShowIntro] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const { messages, sendMessage, isLoading } = useChatbot(selectedText);
+  const { messages, sendMessage, isLoading } = useChatbot(selectedText, shouldShowIntro);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,6 +29,13 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose, selectedText }
       setInputValue('');
     }
   };
+
+  // Show intro message when chat window opens and there are no messages yet
+  useEffect(() => {
+    if (isOpen && messages.length === 0 && !selectedText) {
+      setShouldShowIntro(true);
+    }
+  }, [isOpen, messages.length, selectedText]);
 
   // Scroll to bottom when messages change
   useEffect(() => {
@@ -39,11 +47,14 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ isOpen, onClose, selectedText }
   return (
     <div className="chatbot-window">
       <div className="chatbot-header">
-        <h3>Documentation Assistant</h3>
+        <h3>Textbook Assistant</h3>
+        
         <button className="chatbot-close-button" onClick={onClose} aria-label="Close chat">
           ×
         </button>
+        
       </div>
+     
 
       <div className="chatbot-messages">
         {messages.map((msg) => (
